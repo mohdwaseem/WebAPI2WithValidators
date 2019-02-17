@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using WebApplication1.Models;
 
 namespace WebApplication1.Controllers
 {
@@ -41,11 +42,18 @@ namespace WebApplication1.Controllers
 
         }
        
-        [CheckModelForInt]
+        //[CheckModelForInt]
         [Route("test-int")]
-        public void CheckInt(int id)
+        public IHttpActionResult CheckInt(ReqTest reqTest)
         {
-
+            if (ModelState.IsValid)
+            {
+                return Ok("Ok");
+            }
+            else
+            {
+                return Ok("Error");
+            }
         }
     }
 }
