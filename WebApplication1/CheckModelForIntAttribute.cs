@@ -26,7 +26,7 @@ namespace WebApplication1
         {
             if (_validate(actionContext.ActionArguments))
             {
-                actionContext.Response = actionContext.Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Input String Was not a");
+                actionContext.Response = actionContext.Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Input String Was not in Correct Format");
             }
         }
     }
